@@ -20,7 +20,7 @@ Key traits about Sam:
 const layerPrompts = {
   interests: {
     title: "Interests",
-    prompt: `You are analyzing what Sam, a veteran data scientist, said. Given his persona and his stated position, identify 3-4 underlying INTERESTS that might motivate what he said.
+    prompt: `You are analyzing what Sam, a veteran data scientist, said. Given his persona and his stated position, identify ONE key underlying INTEREST that might motivate what he said.
 
 ${samPersona}
 
@@ -28,14 +28,14 @@ Interests are the "why" behind the position - what Sam actually wants to achieve
 
 What Sam said: "{position}"
 
-For each interest, phrase it as "Sam might actually mean: [explanation of what he's really trying to achieve]"
+Phrase your response as: "Sam might actually mean: [explanation of what he's really trying to achieve]"
 
-Respond with a JSON array of strings, each being a concise interest (1-2 sentences max). Example format:
-["Sam might actually mean: ...", "Sam might actually mean: ...", "Sam might actually mean: ..."]`
+Respond with a JSON array containing exactly ONE string (2-3 sentences). Example format:
+["Sam might actually mean: ..."]`
   },
   values: {
     title: "Values",
-    prompt: `You are analyzing what Sam, a veteran data scientist, said. Given his persona and his stated position, identify 3-4 underlying VALUES that might shape what he said.
+    prompt: `You are analyzing what Sam, a veteran data scientist, said. Given his persona and his stated position, identify ONE key underlying VALUE that might shape what he said.
 
 ${samPersona}
 
@@ -43,14 +43,14 @@ Values are deeply held principles about what is right, important, or worthwhile.
 
 What Sam said: "{position}"
 
-For each value, phrase it as "Sam might actually mean: [explanation of the value he's protecting]"
+Phrase your response as: "Sam might actually mean: [explanation of the value he's protecting]"
 
-Respond with a JSON array of strings, each being a concise value (1-2 sentences max). Example format:
-["Sam might actually mean: ...", "Sam might actually mean: ...", "Sam might actually mean: ..."]`
+Respond with a JSON array containing exactly ONE string (2-3 sentences). Example format:
+["Sam might actually mean: ..."]`
   },
   beliefs: {
     title: "Beliefs",
-    prompt: `You are analyzing what Sam, a veteran data scientist, said. Given his persona and his stated position, identify 3-4 underlying BELIEFS that might inform what he said.
+    prompt: `You are analyzing what Sam, a veteran data scientist, said. Given his persona and his stated position, identify ONE key underlying BELIEF that might inform what he said.
 
 ${samPersona}
 
@@ -58,25 +58,25 @@ Beliefs are assumptions about how the world works, what is true, or what will ha
 
 What Sam said: "{position}"
 
-For each belief, phrase it as "Sam might actually mean: [explanation of the belief driving his statement]"
+Phrase your response as: "Sam might actually mean: [explanation of the belief driving his statement]"
 
-Respond with a JSON array of strings, each being a concise belief (1-2 sentences max). Example format:
-["Sam might actually mean: ...", "Sam might actually mean: ...", "Sam might actually mean: ..."]`
+Respond with a JSON array containing exactly ONE string (2-3 sentences). Example format:
+["Sam might actually mean: ..."]`
   },
   needs: {
     title: "Needs",
-    prompt: `You are analyzing what Sam, a veteran data scientist, said. Given his persona and his stated position, identify 3-4 underlying NEEDS that might drive what he said.
+    prompt: `You are analyzing what Sam, a veteran data scientist, said. Given his persona and his stated position, identify ONE key underlying NEED that might drive what he said.
 
 ${samPersona}
 
-Needs are fundamental human requirements like safety, belonging, respect, autonomy, fairness, or recognition. Think about what basic human needs Sam might be protecting, given his experience and care for his colleagues.
+Needs are fundamental human requirements like safety, belonging, respect, autonomy, fairness, or recognition. Think about what basic human need Sam might be protecting, given his experience and care for his colleagues.
 
 What Sam said: "{position}"
 
-For each need, phrase it as "Sam might actually mean: [explanation of the need he's expressing]"
+Phrase your response as: "Sam might actually mean: [explanation of the need he's expressing]"
 
-Respond with a JSON array of strings, each being a concise need (1-2 sentences max). Example format:
-["Sam might actually mean: ...", "Sam might actually mean: ...", "Sam might actually mean: ..."]`
+Respond with a JSON array containing exactly ONE string (2-3 sentences). Example format:
+["Sam might actually mean: ..."]`
   }
 };
 

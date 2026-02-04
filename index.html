@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position Iceberg Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Position Iceberg</h1>
+      <p class="subtitle">Explore what lies beneath the surface of a stated position</p>
+    </header>
+
+    <div class="iceberg-container">
+      <!-- Above water - Position -->
+      <div class="above-water">
+        <div class="sky"></div>
+        <div class="position-section">
+          <label for="position-input">Stated Position</label>
+          <textarea
+            id="position-input"
+            placeholder="Enter the position someone holds (e.g., 'I refuse to work weekends')"
+            rows="2"
+          ></textarea>
+        </div>
+        <div class="iceberg-tip"></div>
+      </div>
+
+      <!-- Water line -->
+      <div class="waterline">
+        <div class="wave"></div>
+        <div class="wave wave-2"></div>
+      </div>
+
+      <!-- Below water - Hidden layers -->
+      <div class="below-water">
+        <div class="iceberg-body">
+          <!-- Layer buttons -->
+          <div class="layers">
+            <div class="layer" data-layer="interests">
+              <button class="layer-btn" onclick="explore('interests')">
+                <span class="layer-icon">💡</span>
+                <span class="layer-label">Interests</span>
+              </button>
+              <div class="layer-content" id="interests-content">
+                <p class="placeholder">What might this person actually want to achieve?</p>
+              </div>
+            </div>
+
+            <div class="layer" data-layer="values">
+              <button class="layer-btn" onclick="explore('values')">
+                <span class="layer-icon">⭐</span>
+                <span class="layer-label">Values</span>
+              </button>
+              <div class="layer-content" id="values-content">
+                <p class="placeholder">What principles matter deeply to them?</p>
+              </div>
+            </div>
+
+            <div class="layer" data-layer="beliefs">
+              <button class="layer-btn" onclick="explore('beliefs')">
+                <span class="layer-icon">🧠</span>
+                <span class="layer-label">Beliefs</span>
+              </button>
+              <div class="layer-content" id="beliefs-content">
+                <p class="placeholder">What assumptions shape their view?</p>
+              </div>
+            </div>
+
+            <div class="layer" data-layer="needs">
+              <button class="layer-btn" onclick="explore('needs')">
+                <span class="layer-icon">❤️</span>
+                <span class="layer-label">Needs</span>
+              </button>
+              <div class="layer-content" id="needs-content">
+                <p class="placeholder">What fundamental needs drive this position?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- API Key modal -->
+    <div id="api-modal" class="modal">
+      <div class="modal-content">
+        <h2>Enter API Key</h2>
+        <p>To use AI-powered exploration, enter your Anthropic API key. It's stored locally in your browser.</p>
+        <input type="password" id="api-key-input" placeholder="sk-ant-...">
+        <div class="modal-actions">
+          <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+          <button class="btn-primary" onclick="saveApiKey()">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <button class="settings-btn" onclick="openModal()">⚙️ API Settings</button>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

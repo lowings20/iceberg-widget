@@ -1,44 +1,82 @@
-// Position Iceberg Explorer
+// Position Iceberg Explorer - Sam Edition
 
 const API_KEY_STORAGE = 'iceberg_api_key';
+
+// Sam's persona context
+const samPersona = `Sam is a seasoned, outspoken data scientist at LumenLyte Labs, a wearable tech and wellness firm. He's been with the company for over 10 years, making him one of its longest-tenured employees.
+
+Key traits about Sam:
+- Highly experienced, deeply knowledgeable, and unapologetically opinionated
+- Has seen countless trends, policies, and "game-changing initiatives" come and go
+- Believes in efficiency, but not at the cost of common sense
+- Not opposed to change outright, but hates change for the sake of change
+- Direct, no-nonsense communication style, often laced with skepticism
+- Despite his gruff exterior, cares deeply about quality of work and colleagues
+- Has seen too many good employees burn out due to mismanaged expectations
+- Not looking for promotions or power—just wants to do his job well and protect the integrity of the work
+- Will adapt to things that truly make sense and prove themselves, but grudgingly`;
 
 // Layer prompts
 const layerPrompts = {
   interests: {
     title: "Interests",
-    prompt: `Given this stated position, identify 3-4 underlying INTERESTS that might motivate this position. Interests are the "why" behind the position - what the person actually wants to achieve, gain, or protect. Focus on practical goals and desired outcomes.
+    prompt: `You are analyzing what Sam, a veteran data scientist, said. Given his persona and his stated position, identify 3-4 underlying INTERESTS that might motivate what he said.
 
-Stated Position: "{position}"
+${samPersona}
+
+Interests are the "why" behind the position - what Sam actually wants to achieve, gain, or protect. Focus on practical goals and desired outcomes that someone like Sam would have.
+
+What Sam said: "{position}"
+
+For each interest, phrase it as "Sam might actually mean: [explanation of what he's really trying to achieve]"
 
 Respond with a JSON array of strings, each being a concise interest (1-2 sentences max). Example format:
-["Interest 1 explanation", "Interest 2 explanation", "Interest 3 explanation"]`
+["Sam might actually mean: ...", "Sam might actually mean: ...", "Sam might actually mean: ..."]`
   },
   values: {
     title: "Values",
-    prompt: `Given this stated position, identify 3-4 underlying VALUES that might shape this position. Values are deeply held principles about what is right, important, or worthwhile. Think about ethics, priorities, and what this person might hold sacred.
+    prompt: `You are analyzing what Sam, a veteran data scientist, said. Given his persona and his stated position, identify 3-4 underlying VALUES that might shape what he said.
 
-Stated Position: "{position}"
+${samPersona}
+
+Values are deeply held principles about what is right, important, or worthwhile. Think about what Sam holds sacred given his experience and personality.
+
+What Sam said: "{position}"
+
+For each value, phrase it as "Sam might actually mean: [explanation of the value he's protecting]"
 
 Respond with a JSON array of strings, each being a concise value (1-2 sentences max). Example format:
-["Value 1 explanation", "Value 2 explanation", "Value 3 explanation"]`
+["Sam might actually mean: ...", "Sam might actually mean: ...", "Sam might actually mean: ..."]`
   },
   beliefs: {
     title: "Beliefs",
-    prompt: `Given this stated position, identify 3-4 underlying BELIEFS that might inform this position. Beliefs are assumptions about how the world works, what is true, or what will happen. These shape how the person interprets situations.
+    prompt: `You are analyzing what Sam, a veteran data scientist, said. Given his persona and his stated position, identify 3-4 underlying BELIEFS that might inform what he said.
 
-Stated Position: "{position}"
+${samPersona}
+
+Beliefs are assumptions about how the world works, what is true, or what will happen. These are shaped by Sam's 10+ years of experience seeing initiatives succeed and fail.
+
+What Sam said: "{position}"
+
+For each belief, phrase it as "Sam might actually mean: [explanation of the belief driving his statement]"
 
 Respond with a JSON array of strings, each being a concise belief (1-2 sentences max). Example format:
-["Belief 1 explanation", "Belief 2 explanation", "Belief 3 explanation"]`
+["Sam might actually mean: ...", "Sam might actually mean: ...", "Sam might actually mean: ..."]`
   },
   needs: {
     title: "Needs",
-    prompt: `Given this stated position, identify 3-4 underlying NEEDS that might drive this position. Needs are fundamental human requirements like safety, belonging, respect, autonomy, fairness, or recognition. Think about what basic human need this position might be protecting.
+    prompt: `You are analyzing what Sam, a veteran data scientist, said. Given his persona and his stated position, identify 3-4 underlying NEEDS that might drive what he said.
 
-Stated Position: "{position}"
+${samPersona}
+
+Needs are fundamental human requirements like safety, belonging, respect, autonomy, fairness, or recognition. Think about what basic human needs Sam might be protecting, given his experience and care for his colleagues.
+
+What Sam said: "{position}"
+
+For each need, phrase it as "Sam might actually mean: [explanation of the need he's expressing]"
 
 Respond with a JSON array of strings, each being a concise need (1-2 sentences max). Example format:
-["Need 1 explanation", "Need 2 explanation", "Need 3 explanation"]`
+["Sam might actually mean: ...", "Sam might actually mean: ...", "Sam might actually mean: ..."]`
   }
 };
 

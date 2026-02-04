@@ -12,8 +12,13 @@
 <body>
   <div class="container">
     <header>
-      <h1>Position Iceberg</h1>
-      <p class="subtitle">Explore what lies beneath the surface of a stated position</p>
+      <div class="sam-header">
+        <img src="sam.webp" alt="Sam" class="sam-avatar">
+        <div class="sam-info">
+          <h1>What does Sam think?</h1>
+          <p class="subtitle">Explore what lies beneath the surface of what Sam says</p>
+        </div>
+      </div>
     </header>
 
     <div class="iceberg-container">
@@ -21,10 +26,10 @@
       <div class="above-water">
         <div class="sky"></div>
         <div class="position-section">
-          <label for="position-input">Stated Position</label>
+          <label for="position-input">What Sam said</label>
           <textarea
             id="position-input"
-            placeholder="Enter the position someone holds (e.g., 'I refuse to work weekends')"
+            placeholder="Enter something Sam said (e.g., 'This new software initiative is just another fad')"
             rows="2"
           ></textarea>
         </div>
@@ -48,7 +53,7 @@
                 <span class="layer-label">Interests</span>
               </button>
               <div class="layer-content" id="interests-content">
-                <p class="placeholder">What might this person actually want to achieve?</p>
+                <p class="placeholder">What might Sam actually be trying to achieve?</p>
               </div>
             </div>
 
@@ -58,7 +63,7 @@
                 <span class="layer-label">Values</span>
               </button>
               <div class="layer-content" id="values-content">
-                <p class="placeholder">What principles matter deeply to them?</p>
+                <p class="placeholder">What principles matter deeply to Sam?</p>
               </div>
             </div>
 
@@ -68,7 +73,7 @@
                 <span class="layer-label">Beliefs</span>
               </button>
               <div class="layer-content" id="beliefs-content">
-                <p class="placeholder">What assumptions shape their view?</p>
+                <p class="placeholder">What assumptions from Sam's experience shape his view?</p>
               </div>
             </div>
 
@@ -78,7 +83,7 @@
                 <span class="layer-label">Needs</span>
               </button>
               <div class="layer-content" id="needs-content">
-                <p class="placeholder">What fundamental needs drive this position?</p>
+                <p class="placeholder">What fundamental needs drive Sam's position?</p>
               </div>
             </div>
           </div>

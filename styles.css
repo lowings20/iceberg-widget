@@ -242,8 +242,13 @@ header h1 {
   background: rgba(255, 255, 255, 0.12);
 }
 
+.layer-header {
+  display: flex;
+  align-items: center;
+}
+
 .layer-btn {
-  width: 100%;
+  flex: 1;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -262,6 +267,31 @@ header h1 {
 .layer-btn:focus {
   outline: none;
   background: rgba(255, 255, 255, 0.1);
+}
+
+.refresh-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-right: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  color: var(--color-white);
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.refresh-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(45deg);
+}
+
+.layer.explored .refresh-btn {
+  display: flex;
 }
 
 .layer-icon {

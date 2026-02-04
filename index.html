@@ -48,40 +48,52 @@
           <!-- Layer buttons -->
           <div class="layers">
             <div class="layer" data-layer="interests">
-              <button class="layer-btn" onclick="explore('interests')">
-                <span class="layer-icon">💡</span>
-                <span class="layer-label">Interests</span>
-              </button>
+              <div class="layer-header">
+                <button class="layer-btn" onclick="explore('interests')">
+                  <span class="layer-icon">💡</span>
+                  <span class="layer-label">Interests</span>
+                </button>
+                <button class="refresh-btn" id="interests-refresh" onclick="explore('interests')" title="Refresh">↻</button>
+              </div>
               <div class="layer-content" id="interests-content">
                 <p class="placeholder">What might Sam actually be trying to achieve?</p>
               </div>
             </div>
 
             <div class="layer" data-layer="values">
-              <button class="layer-btn" onclick="explore('values')">
-                <span class="layer-icon">⭐</span>
-                <span class="layer-label">Values</span>
-              </button>
+              <div class="layer-header">
+                <button class="layer-btn" onclick="explore('values')">
+                  <span class="layer-icon">⭐</span>
+                  <span class="layer-label">Values</span>
+                </button>
+                <button class="refresh-btn" id="values-refresh" onclick="explore('values')" title="Refresh">↻</button>
+              </div>
               <div class="layer-content" id="values-content">
                 <p class="placeholder">What principles matter deeply to Sam?</p>
               </div>
             </div>
 
             <div class="layer" data-layer="beliefs">
-              <button class="layer-btn" onclick="explore('beliefs')">
-                <span class="layer-icon">🧠</span>
-                <span class="layer-label">Beliefs</span>
-              </button>
+              <div class="layer-header">
+                <button class="layer-btn" onclick="explore('beliefs')">
+                  <span class="layer-icon">🧠</span>
+                  <span class="layer-label">Beliefs</span>
+                </button>
+                <button class="refresh-btn" id="beliefs-refresh" onclick="explore('beliefs')" title="Refresh">↻</button>
+              </div>
               <div class="layer-content" id="beliefs-content">
                 <p class="placeholder">What assumptions from Sam's experience shape his view?</p>
               </div>
             </div>
 
             <div class="layer" data-layer="needs">
-              <button class="layer-btn" onclick="explore('needs')">
-                <span class="layer-icon">❤️</span>
-                <span class="layer-label">Needs</span>
-              </button>
+              <div class="layer-header">
+                <button class="layer-btn" onclick="explore('needs')">
+                  <span class="layer-icon">❤️</span>
+                  <span class="layer-label">Needs</span>
+                </button>
+                <button class="refresh-btn" id="needs-refresh" onclick="explore('needs')" title="Refresh">↻</button>
+              </div>
               <div class="layer-content" id="needs-content">
                 <p class="placeholder">What fundamental needs drive Sam's position?</p>
               </div>
